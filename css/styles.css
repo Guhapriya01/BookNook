@@ -17,7 +17,7 @@ body {
 
 
 .bg-custom {
-background: #575757;
+background: #ff4c68;
 text-align: center;
 padding: 14px 16px;
 font-size: 17px;
@@ -59,9 +59,9 @@ button {
     width: 700px;
     padding: 5px;
     margin: -83px auto 0 auto;
-    background-color: #575757;
+    background-color: #ff4c68;
     border-radius: 20px;
-    box-shadow: 0 10px 40px #575757, 0 0 0 20px #575757;
+    box-shadow: 0 10px 40px #ff4c68, 0 0 0 20px #ff4c68;
     transform: scale(0.6);
 }
 
@@ -100,10 +100,10 @@ input[type="text"]::placeholder {
 }
 
 .button-value {
-  border: 2px solid #575757;
+  border: 2px solid #ff4c68;
   padding: 0.5em 2.2em;
   border-radius: 3em;
-  color: #575757;
+  color: #ff4c68;
   cursor: pointer;
   margin-left: 10px;
   margin-right: 10px;
@@ -185,6 +185,6 @@ button span:after {
 }
 
 .active {
-  background-color: #575757;
+  background-color: #ff4c68;
   color: #ffffff;
 }
