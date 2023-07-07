@@ -103,7 +103,7 @@ input[type="text"]::placeholder {
   border: 2px solid #ff4c68;
   padding: 0.5em 2.2em;
   border-radius: 3em;
-  color: #ff4c68;
+  color: white;
   cursor: pointer;
   margin-left: 10px;
   margin-right: 10px;
