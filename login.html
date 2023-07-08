@@ -53,14 +53,14 @@
   to {bottom: 0; opacity: 0;}
 }
 
-    </style>
+</style>
     
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@500;600;800&display=swap"
-        rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@500;600;800&display=swap"
+      rel="stylesheet">
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
 </head>
@@ -68,8 +68,9 @@
 background-position: center;
 background-size: cover;">
     <div class="contain">
+      
         <div class="login">
-            <form>
+          <div id="form">
             <h1>Welcome!</h1>
                 <small>Login to your account to start reading books !!</small>
                 <label for="email">Email</label>
@@ -91,13 +92,14 @@ background-size: cover;">
                 <div class="op" align="center" style="
                 padding-left: 97px;
             ">
-                    <button  id="google-signin-btn" onclick="signInWithGoogle()" >
+                    <button id="google-signin-btn" onclick="signIn()" >
                         <img src="https://companieslogo.com/img/orig/GOOG-0ed88f7c.png?t=1633218227" alt="Google Logo"
                             class="Google-logo"> Google
                     </button>
                 </div>
-            </form>
+              </div>
         </div>
+      
 
         <div class="image">
             <h1>New here? Sign up to begin !</h1>
@@ -106,6 +108,37 @@ background-size: cover;">
 
     </div>
     <div id="snackbar"></div>
+    <script>
+
+    function signIn() {
+                let oauth2Endpoint = "https://accounts.google.com/o/oauth2/v2/auth";
+
+                let form = document.createElement('form');
+                form.setAttribute('method', 'GET');
+                form.setAttribute('action', oauth2Endpoint);
+
+                let params = {
+                    "client_id": "705193354694-dr282kf04upf6867sqm86l0jconknhul.apps.googleusercontent.com",
+                    "redirect_uri": "https://guhapriya01.github.io/BookNook/userPage.html",
+                    "response_type": "token",
+                    "scope": "https://www.googleapis.com/auth/userinfo.profile",
+                    "include_granted_scopes": 'true',
+                    "state": 'pass-through-value'
+                }
+
+                for (var p in params) {
+                let input = document.createElement('input');
+                input.setAttribute('type', 'hidden');
+                input.setAttribute('name', p);
+                input.setAttribute('value', params[p]);
+                form.appendChild(input);
+            }
+
+            document.body.appendChild(form);
+
+            form.submit();
+          }
+    </script>
     <script >
         
         const firebaseConfig = {
