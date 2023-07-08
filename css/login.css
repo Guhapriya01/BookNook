@@ -22,13 +22,13 @@
     padding: 20px;
 }
 
-form {
+#form {
     max-width: 380px;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
 }
 
-form input[type="text"],
+#form input[type="text"],
 input[type="Password"] {
     width: 100%;
     font-size: 13px;
@@ -47,12 +47,13 @@ label {
     margin-bottom: 8px;
 }
 
-form h1 {
+#form h1 {
     font-family: 'Poppins', sans-serif;
     color: #575757;
     /* color: #c89173; */
     margin-bottom: 10px;
 }
+
 
 small {
     font-size: 14px;
