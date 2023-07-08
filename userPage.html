@@ -65,16 +65,27 @@ table {
 </head>
 <body style="background: url(https://plus.unsplash.com/premium_photo-1677622678379-115b35bf27e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2hpdGUlMjBib29rfGVufDB8fDB8fHww&w=1000&q=80) no-repeat center center fixed;background-position: center;background-size: cover;">
     <script>
+window.onload = function () {
 
-      window.onload = function() {
-        
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
+let params = {};
+let regex = /([^&=]+)=([^&]*)/g, m;
 
-        if (!isLoggedIn || isLoggedIn ==='false') {
-            window.location.href = 'index.html';
-        };
-      }
+while (m = regex.exec(location.href)) {
+    params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+}
 
+if (Object.keys(params).length > 0) {
+    window.history.pushState({}, document.title, "/" + "userPage.html");
+}
+else
+{
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (!isLoggedIn || isLoggedIn === false) {
+        window.location.href = 'login.html';
+    }
+}
+}
     </script>
 
     <div class="bg-custom">
