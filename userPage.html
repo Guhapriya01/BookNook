@@ -75,7 +75,8 @@ while (m = regex.exec(location.href)) {
 }
 
 if (Object.keys(params).length > 0) {
-    window.location.href = "https://guhapriya01.github.io/BookNook/userPage.html";
+    localStorage.setItem('isLoggedIn','true');
+     window.location.href = 'userPage.html';
 }
 else
 {
